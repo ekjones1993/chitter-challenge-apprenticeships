@@ -1,0 +1,17 @@
+<h1>Welcome to Chitter!</h1>
+<h2>Chitter Feed</h2>
+<% @peeps.each do |peep| %>
+<li class="peeps" id="peep-<%= peep.id %>">
+    <%= peep.message%>
+    <%= peep.date%>
+  </li>
+  <% end %>
+  <br>
+<form action="/peep">
+  <input type='submit' value='Post A Peep'/>
+</form>
+
+<form action="/search" form method="post">
+  <input type="text" name="keyword" />
+  <input type='submit' value='Search'/>
+</form>

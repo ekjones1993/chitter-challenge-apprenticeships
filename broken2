@@ -1,0 +1,30 @@
+<h2>Search term: <%=@keyword%> </h2>
+
+<% @searched.each do |peep| %>
+<li class="peep" id="peep-<%= peep.id %>">
+<%= peep.message %>
+<br><%= peep.date %></li>
+<% end %>
+
+
+#def self.search(keyword:)
+#  result = DatabaseConnection.query("SELECT * FROM peeps WHERE lower(message) LIKE '%#{keyword}%' ORDER BY date DESC")
+#  result.map do |peep|
+#    Peep.new(
+#      id: result['id'],
+#      message: result['message'],
+#      date: result['date']
+#    )
+#  end
+#end
+
+<form action="/search" method="post">
+  <input type="text" name="keyword" placeholder="Search"/>
+  <input type="submit" value="Submit"</>
+</form>  
+
+
+#post '/search' do
+#  @searched = Peep.search(keyword: params['keyword'])
+#  erb :search
+#end

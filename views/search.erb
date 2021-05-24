@@ -1,0 +1,14 @@
+<h2>Search term: <%=@keyword%> </h2>
+
+  <% if peeps.length == 0 %>
+  <h1 class="text"> Sorry. No results found. Try again. </h1>
+  <%else%>
+  <% @peeps.each do |peep| %>
+  <li class="peeps" id="peep-<%= peep.id %>">
+      <%= peep.message%>
+      <%= peep.date%>
+    </li>
+    <% end %>
+
+
+      <% end %>
