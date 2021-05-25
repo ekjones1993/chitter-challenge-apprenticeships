@@ -8,7 +8,6 @@ feature 'Search Peeps' do
 
     fill_in('keyword', with: 'chitter')
     click_button('Search')
-    visit('/search')
 
     expect(page).to have_content('chitter')
   end

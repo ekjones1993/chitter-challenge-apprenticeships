@@ -1,7 +1,0 @@
-<h2>Search term: <%=@keyword%> </h2>
-
-<% @searched.each do |peep| %>
-<li class="peep" id="peep-<%= peep.id %>">
-<%= peep.message %>
-<br><%= peep.date %></li>
-<% end %>

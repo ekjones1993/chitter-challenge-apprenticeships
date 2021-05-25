@@ -24,8 +24,7 @@ class Peep
 
   def self.search(keyword:)
     result = DatabaseConnection.query("SELECT * FROM peeps WHERE (message) LIKE '%#{keyword}%' ORDER BY date DESC")
-    result.select do |peep|
-      peep
+    result.map do |peep|
       Peep.new(
         id: peep['id'],
         message: peep['message'],

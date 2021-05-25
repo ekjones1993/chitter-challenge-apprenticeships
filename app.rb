@@ -34,7 +34,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/search' do
-    @peeps = Peep.search(keyword: params['keyword'])
+    @searched = Peep.search(keyword: params['keyword'])
     @keyword = params[:keyword]
     erb :search
   end
